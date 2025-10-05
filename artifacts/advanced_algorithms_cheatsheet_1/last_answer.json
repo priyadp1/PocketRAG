@@ -1,0 +1,10 @@
+{
+  "question": "What are the key takeaways?",
+  "citations": [
+    "S1:advanced_algorithms_cheatsheet_1.pdf:D1-C3",
+    "S2:advanced_algorithms_cheatsheet_1.pdf:D1-C2",
+    "S3:advanced_algorithms_cheatsheet_1.pdf:D1-C1",
+    "S4:advanced_algorithms_cheatsheet_1.pdf:D1-C4"
+  ],
+  "answer": "This cheat sheet provides a Python-first overview of advanced algorithms and data structures commonly encountered in coding interviews, including their time and space complexities. It covers graph algorithms like Kahn's for topological sort, Dijkstra's for shortest paths, and a DFS-based method for finding bridges. String algorithms such as the Z-Algorithm for pattern matching and an implicit Manacher's algorithm for palindromes are detailed. Additionally, it presents essential data structures like Disjoint Set Union, Monotonic Stack, Segment Tree, and Trie, illustrating their implementations and typical usage. [S1, S2, S3, S4]"
+}
