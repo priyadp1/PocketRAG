@@ -66,10 +66,8 @@ PORT=5050
 
 Run locally
 
-python app.py
+python3 app.py
 
-
-Access the app at: http://127.0.0.1:5050
 
 Docker Deployment
 Build the image
@@ -84,7 +82,6 @@ docker run -d --name pocketrag \
   pocketrag
 
 
-Access the app at: http://<your-ec2-public-ip>/
 
 AWS EC2 Deployment
 
