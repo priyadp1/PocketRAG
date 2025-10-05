@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Doc • {{ filename or doc_id }} — PocketRAG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+  <main class="container">
+    <a href="/" style="color:#8fb5ff;">← Back</a>
+    <h1>{{ filename or doc_id }}</h1>
+
+    <section class="card">
+      <h2>Summary</h2>
+      <pre class="answer">{{ summary }}</pre>
+    </section>
+
+    <section class="card">
+      <h2>Ask this document</h2>
+      <form method="post">
+        <label for="q">Question:</label>
+        <div class="row">
+          <input id="q" name="q" type="text" placeholder="e.g., What are the main arguments?" value="{{ q or '' }}" required />
+          <button type="submit">Ask</button>
+        </div>
+      </form>
+    </section>
+
+    {% if answer %}
+    <section class="card">
+      <h2>Answer</h2>
+      <div class="answer">{{ answer }}</div>
+      {% if citations %}
+        <h3>Citations</h3>
+        <ul class="cites">
+          {% for c in citations %}
+            <li>{{ c }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </section>
+    {% endif %}
+  </main>
+</body>
+</html>
