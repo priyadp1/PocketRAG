@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>PocketRAG — Upload</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+  <main class="container">
+    <h1>PocketRAG</h1>
+    <p class="sub">Upload a single document to get a per-document summary and Q&A.</p>
+
+    {% with msgs = get_flashed_messages(with_categories=true) %}
+      {% if msgs %}
+        <div class="flash-wrap">
+          {% for cat, msg in msgs %}
+            <div class="flash {{ 'ok' if cat=='ok' else 'err' }}">{{ msg }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <section class="card">
+      <h2>Upload a document</h2>
+      <form method="post" enctype="multipart/form-data" class="upload-form">
+        <input type="file" name="file" accept=".pdf,.txt,.md" required />
+        <button type="submit">Upload & Index</button>
+      </form>
+      <p class="hint">Allowed: PDF, TXT, MD (≤100 MB). Each upload creates its own index and summary.</p>
+    </section>
+
+    <section class="card">
+      <h2>Your documents</h2>
+      {% if docs %}
+        <ul class="docs">
+          {% for d in docs %}
+            <li><a href="{{ url_for('doc_page', doc_id=d) }}">{{ d }}</a></li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="hint">No documents yet.</p>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>
