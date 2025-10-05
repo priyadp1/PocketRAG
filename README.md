@@ -20,7 +20,7 @@ The app is containerized using Docker and deployed on AWS EC2, utilizing Gunicor
 | AI Model | Google Generative AI (Gemini-2.5-Flash) |
 | Environment Management | Python-dotenv |
 | Containerization | Docker |
-| Cloud Hosting | AWS EC2 (Ubuntu 24.04, t3.small) |
+| Cloud Hosting | AWS EC2 (Ubuntu 24.04, t2.micro) |
 
 ---
 
